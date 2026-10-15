@@ -33,3 +33,9 @@ Jeder Eintrag enthält Datum, Werkzeug, den Prompt (wörtlich), das Ergebnis und
 - **Prompt:** „push auch direkt jedes mal“
 - **Ergebnis:** Ab jetzt pusht Claude Code nach jedem Auftrag direkt nach dem Commit auf `origin/master`. Der Commit zu Feature 1 und dieser Eintrag wurden gepusht.
 - **Meine Bewertung:**
+
+## 5 · 2026-10-15 · Feature 2: Austeilen
+- **Werkzeug:** Claude Code
+- **Prompt:** „Setze Feature 2 um: Spieler und Computer bekommen je 5 Karten, die nächste Karte wird als Trumpf aufgedeckt, der Rest bleibt als Talon. Gib zum Test die Hand des Spielers, die Trumpfkarte und die Anzahl der Talonkarten aus. Die Hand des Computers bleibt verdeckt.“
+- **Ergebnis:** In `Deck.java` gibt es zwei neue Methoden: `drawCard()` zieht die oberste Karte, `revealTrump()` deckt sie auf und legt sie ganz nach unten. Die neue Datei `Game.java` enthält Talon, beide Hände (Arrays mit Zähler) und die Trumpfkarte und teilt in `deal()` aus. `Main.java` zeigt die Hand des Spielers, den Trumpf, die Talon-Größe (10) und die Kartenanzahl des Computers an. Getestet durch zwei Programmläufe und einen temporären Prüfcode mit 1000 Durchläufen: immer 20 verschiedene Karten, 120 Punkte, 10 Talonkarten, und die Trumpfkarte wird als letzte gezogen.
+- **Meine Bewertung:**

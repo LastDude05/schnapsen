@@ -30,6 +30,23 @@ class Deck {
         }
     }
 
+    // Die oberste Karte liegt am Ende des Arrays (Index size - 1).
+    Card drawCard() {
+        size--;
+        return cards[size];
+    }
+
+    // Die oberste Karte aufdecken und ganz nach unten legen (Index 0),
+    // damit sie als letzte Karte gezogen wird.
+    Card revealTrump() {
+        Card trump = cards[size - 1];
+        for (int i = size - 1; i > 0; i--) {
+            cards[i] = cards[i - 1];
+        }
+        cards[0] = trump;
+        return trump;
+    }
+
     int size() {
         return size;
     }
