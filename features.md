@@ -4,7 +4,7 @@ Status: `[x]` fertig, `[ ]` offen
 
 ## Grundlagen (Ziel für den Zwischenstand)
 
-1. [ ] **Kartendeck:** 20 Karten erzeugen (Herz, Schelle, Eichel, Laub, je Ass, Zehn, König, Ober, Unter) und zufällig mischen.
+1. [x] **Kartendeck:** 20 Karten erzeugen (Herz, Schelle, Eichel, Laub, je Ass, Zehn, König, Ober, Unter) und zufällig mischen.
 2. [ ] **Austeilen:** Spieler und Computer bekommen je 5 Karten. Die nächste Karte wird als Trumpf aufgedeckt, der Rest bildet den Talon.
 3. [ ] **Ausspielen:** Die eigene Hand wird nummeriert angezeigt, der Spieler wählt per Zahleneingabe eine Karte. Ungültige Eingaben werden abgefangen.
 
