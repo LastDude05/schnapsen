@@ -21,4 +21,27 @@ class Game {
         }
         trumpCard = talon.revealTrump();
     }
+
+    // Karte an der Stelle index aus der Hand nehmen.
+    // Alle Karten dahinter rücken eine Stelle nach vorne, damit keine Lücke entsteht.
+    Card playPlayerCard(int index) {
+        Card card = playerHand[index];
+        for (int i = index; i < playerHandSize - 1; i++) {
+            playerHand[i] = playerHand[i + 1];
+        }
+        playerHandSize--;
+        playerHand[playerHandSize] = null;
+        return card;
+    }
+
+    // Vorerst spielt der Computer immer seine erste Karte.
+    Card playComputerCard() {
+        Card card = computerHand[0];
+        for (int i = 0; i < computerHandSize - 1; i++) {
+            computerHand[i] = computerHand[i + 1];
+        }
+        computerHandSize--;
+        computerHand[computerHandSize] = null;
+        return card;
+    }
 }

@@ -6,7 +6,7 @@ Status: `[x]` fertig, `[ ]` offen
 
 1. [x] **Kartendeck:** 20 Karten erzeugen (Herz, Schelle, Eichel, Laub, je Ass, Zehn, König, Ober, Unter) und zufällig mischen.
 2. [x] **Austeilen:** Spieler und Computer bekommen je 5 Karten. Die nächste Karte wird als Trumpf aufgedeckt, der Rest bildet den Talon.
-3. [ ] **Ausspielen:** Die eigene Hand wird nummeriert angezeigt, der Spieler wählt per Zahleneingabe eine Karte. Ungültige Eingaben werden abgefangen.
+3. [x] **Ausspielen:** Die eigene Hand wird nummeriert angezeigt, der Spieler wählt per Zahleneingabe eine Karte. Ungültige Eingaben werden abgefangen.
 
 ## Spielablauf
 
