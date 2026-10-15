@@ -45,3 +45,9 @@ Jeder Eintrag enthält Datum, Werkzeug, den Prompt (wörtlich), das Ergebnis und
 - **Prompt:** „Setze Feature 3 um: Zeig dem Spieler seine Hand nummeriert (1–5) und lass ihn per Zahl eine Karte ausspielen. Bei Buchstaben oder Zahlen außerhalb des Bereichs: Fehlermeldung und neu fragen. Die gespielte Karte verschwindet aus der Hand. Der Computer spielt vorerst einfach seine erste Karte. Die Stichauswertung (Feature 4) noch nicht bauen.“
 - **Ergebnis:** In `Game.java` gibt es `playPlayerCard(index)` und `playComputerCard()`: Sie nehmen die Karte aus der Hand, und die Karten dahinter rücken nach vorne. `Main.java` hat jetzt `printHand()` und `readCardNumber()` mit Prüfung über `hasNextInt()` und wiederholter Abfrage. Getestet mit eingegebenen Werten: `abc`, `0`, `6`, `-2` und `2.5` führen zu einer Fehlermeldung und neuer Abfrage, gültige Zahlen 1, 3, 4 und 5 spielen die richtige Karte, danach hat die Hand 4 Karten. Ein temporärer Prüfcode bestätigte, dass auch beim Computer die erste Karte entfernt wird.
 - **Meine Bewertung:**
+
+## 7 · 2026-10-15 · Git-Regel in AGENTS.md
+- **Werkzeug:** Claude Code
+- **Prompt:** „Passe in AGENTS.md die Git-Regel an: Nach jedem Auftrag committen (Nachricht "Feature n: Titel") und auf origin/master pushen. Dateien löschen weiterhin nur nach Rückfrage.“
+- **Ergebnis:** In `AGENTS.md` (Abschnitt Arbeitsweise) wurde die Zeile „Kein git commit, kein git push und kein Löschen von Dateien“ durch zwei Regeln ersetzt: nach jedem Auftrag committen mit der Nachricht „Feature n: Titel“ und auf origin/master pushen, Dateien nur nach Rückfrage löschen. Getestet wurde nichts, weil sich kein Code geändert hat.
+- **Meine Bewertung:**

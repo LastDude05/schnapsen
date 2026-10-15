@@ -57,7 +57,8 @@ Wenn ein verbotenes Sprachmittel nötig scheint: Stopp. Erklär mir das Problem 
 - Nach Abschluss eines Features:
   1. In `features.md` den Status des Features auf `[x]` setzen.
   2. Einen Eintrag ans Ende von `prompt-diary.md` anhängen (Format unten).
-- Kein `git commit`, kein `git push` und kein Löschen von Dateien. Das mache ich selbst.
+- Nach jedem Auftrag committen (Commit-Nachricht "Feature n: Titel") und auf `origin/master` pushen.
+- Dateien löschen nur nach Rückfrage.
 
 ## Format für prompt-diary.md
 
