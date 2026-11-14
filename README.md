@@ -25,6 +25,7 @@ java -cp out Main
 
 ## Projektdateien
 
+- `manual.md`: Bedienungsanleitung (wie man das Programm startet und bedient)
 - `features.md`: nummerierte Feature-Liste mit Umsetzungsstand
 - `AGENTS.md`: Anweisungen für den KI-Agenten
 - `prompt-diary.md`: Tagebuch der verwendeten Prompts mit eigener Bewertung

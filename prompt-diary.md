@@ -51,3 +51,9 @@ Jeder Eintrag enthält Datum, Werkzeug, den Prompt (wörtlich), das Ergebnis und
 - **Prompt:** „Passe in AGENTS.md die Git-Regel an: Nach jedem Auftrag committen (Nachricht "Feature n: Titel") und auf origin/master pushen. Dateien löschen weiterhin nur nach Rückfrage.“
 - **Ergebnis:** In `AGENTS.md` (Abschnitt Arbeitsweise) wurde die Zeile „Kein git commit, kein git push und kein Löschen von Dateien“ durch zwei Regeln ersetzt: nach jedem Auftrag committen mit der Nachricht „Feature n: Titel“ und auf origin/master pushen, Dateien nur nach Rückfrage löschen. Getestet wurde nichts, weil sich kein Code geändert hat.
 - **Meine Bewertung:**
+
+## 8 · 2026-11-14 · Abgabe Zwischenstand: manual.md
+- **Werkzeug:** Claude Code
+- **Prompt:** „Ich hab diese aufgabe auf moodle, kannst du bitte alles für mich machen oder wenn ich was machen muss mir genau sagen was ich amchen soll“ (danach Aufgabentext aus Moodle eingefügt: „Upload project progress and debugging screenshot … It must include: first basic application code, code must compile, manual.md explaining how to interact with the application, at least one feature of your description must be implemented (check mark at feature in feature.md), prompt diary“)
+- **Ergebnis:** Neue Datei `manual.md` mit Bedienungsanleitung (Starten, Ablauf, Beispiel, falsche Eingaben, Kartenwerte), Verweis darauf in `README.md` ergänzt. Getestet: `javac -d out src/*.java` kompiliert ohne Fehler, Programmlauf mit den Eingaben `x`, `9`, `2` zeigt zwei Fehlermeldungen und spielt dann Karte 2 aus.
+- **Meine Bewertung:**
