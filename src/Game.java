@@ -3,6 +3,7 @@ import java.util.Random;
 class Game {
 
     static final int HAND_SIZE = 5;
+    static final int WINNING_POINTS = 66;
 
     Deck talon = new Deck();
     Card[] playerHand = new Card[HAND_SIZE];
@@ -10,6 +11,9 @@ class Game {
     Card[] computerHand = new Card[HAND_SIZE];
     int computerHandSize = 0;
     Card trumpCard;
+    int playerPoints = 0;
+    int computerPoints = 0;
+    boolean playerLeads = true;
 
     void deal(Random random) {
         talon.shuffle(random);
@@ -50,6 +54,36 @@ class Game {
     // Die Punkte einer Karte entsprechen ihrer Rangfolge (Ass 11 > Zehn 10 > König 4 > Ober 3 > Unter 2).
     int rankValue(Card card) {
         return card.points();
+    }
+
+    // Der Stichgewinner bekommt die Punkte beider Karten und spielt als Nächstes aus.
+    void scoreTrick(boolean playerWon, Card first, Card second) {
+        int trickPoints = first.points() + second.points();
+        if (playerWon) {
+            playerPoints += trickPoints;
+        } else {
+            computerPoints += trickPoints;
+        }
+        playerLeads = playerWon;
+    }
+
+    // Das Spiel endet, sobald eine Seite 66 Punkte hat oder keine Karten mehr auf der Hand sind.
+    boolean isOver() {
+        return playerPoints >= WINNING_POINTS
+                || computerPoints >= WINNING_POINTS
+                || playerHandSize == 0;
+    }
+
+    // Hat niemand 66 Punkte, gewinnt die Seite mit dem letzten Stich.
+    // Der letzte Stichgewinner ist der, der jetzt am Ausspielen wäre.
+    boolean playerWinsGame() {
+        if (playerPoints >= WINNING_POINTS) {
+            return true;
+        }
+        if (computerPoints >= WINNING_POINTS) {
+            return false;
+        }
+        return playerLeads;
     }
 
     // Vorerst spielt der Computer immer seine erste Karte.
