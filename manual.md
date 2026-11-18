@@ -19,36 +19,70 @@ Voraussetzung: Java (JDK 21 oder neuer).
 2. Angezeigt werden:
    - die **Trumpfkarte** (sie bestimmt die Trumpffarbe),
    - die Anzahl der Karten im **Talon** (10, inklusive Trumpfkarte),
-   - die Kartenanzahl des **Computers** (seine Karten bleiben verdeckt),
-   - **deine Hand**, nummeriert von 1 bis 5. Hinter jeder Karte steht ihr Punktewert in Klammern.
-3. Du wirst gefragt: `Welche Karte spielst du? (1-5):`
-   Tippe die Nummer der Karte ein und drück **Enter**.
-4. Das Programm zeigt deine Karte und die Karte des Computers. Danach siehst du deine restliche Hand (4 Karten).
+   - die Kartenanzahl des **Computers** (seine Karten bleiben verdeckt).
+3. Danach wird Stich für Stich gespielt. Du spielst beim ersten Stich aus.
+   - **Du bist am Ausspielen:** Du siehst deine Hand, nummeriert ab 1. Hinter jeder Karte steht ihr Punktewert in Klammern. Bei `Welche Karte spielst du?` tippst du die Nummer ein und drückst **Enter**. Danach legt der Computer seine Karte.
+   - **Der Computer ist am Ausspielen:** Zuerst siehst du seine Karte (`Computer spielt aus: ...`), danach wählst du deine Antwortkarte.
+4. Nach jedem Stich zeigt das Programm, wer ihn gewinnt und wie viele Punkte er bringt, danach den **Punktestand**.
+   - Die ausgespielte Karte gewinnt, außer die Antwortkarte hat dieselbe Farbe und einen höheren Rang, oder sie ist Trumpf und die ausgespielte Karte nicht.
+   - Wer den Stich gewinnt, bekommt die Punkte beider Karten und spielt als Nächstes aus.
+5. Das Spiel endet, sobald eine Seite **66 Punkte** hat. Diese Seite gewinnt. Hat niemand 66 Punkte, wenn alle Karten gespielt sind, gewinnt, wer den **letzten Stich** gemacht hat.
 
-Im Moment wird nur ein einzelner Zug gespielt. Danach endet das Programm. Stichauswertung, Punkte und Nachziehen folgen in späteren Features (siehe `features.md`).
+Im Moment wird noch nicht vom Talon nachgezogen. Ein Spiel hat deshalb 5 Stiche. Nachziehen, Ansagen, Zudrehen und ein klügerer Computergegner folgen in späteren Features (siehe `features.md`).
 
 ## Beispiel
 
+Die Zahlen hinter `Welche Karte spielst du?` sind deine Eingaben.
+
 ```
-Trumpf: Schelle Ober (3)
+Trumpf: Herz König (4)
 Talon: 10 Karten (inklusive Trumpfkarte)
 Computer: 5 Karten (verdeckt)
 
 Deine Hand:
-1. Eichel Unter (2)
+1. Schelle Unter (2)
+2. Herz Ass (11)
+3. Laub Unter (2)
+4. Schelle Ober (3)
+5. Herz Ober (3)
+Welche Karte spielst du? (1-5): 1
+Du spielst: Schelle Unter (2)
+Computer spielt: Schelle Ass (11)
+Der Computer gewinnt den Stich (13 Punkte).
+Punktestand: Du 0 – Computer 13
+
+Computer spielt aus: Herz Unter (2)
+Deine Hand:
+1. Herz Ass (11)
 2. Laub Unter (2)
-3. Schelle Unter (2)
-4. Schelle König (4)
-5. Laub Ass (11)
-Welche Karte spielst du? (1-5): 2
-Du spielst: Laub Unter (2)
+3. Schelle Ober (3)
+4. Herz Ober (3)
+Welche Karte spielst du? (1-4): 1
+Du spielst: Herz Ass (11)
+Du gewinnst den Stich (13 Punkte).
+Punktestand: Du 13 – Computer 13
+
+...
+
+Deine Hand:
+1. Herz Ober (3)
+Welche Karte spielst du? (1-1): 1
+Du spielst: Herz Ober (3)
 Computer spielt: Eichel Ass (11)
+Du gewinnst den Stich (14 Punkte).
+Punktestand: Du 46 – Computer 13
+
+Spielende!
+Niemand hat 66 Punkte erreicht, deshalb gewinnt, wer den letzten Stich gemacht hat.
+Du gewinnst das Spiel mit 46 Punkten.
 ```
+
+Im ersten Stich gewinnt der Computer, weil sein Schelle Ass höher ist als dein Schelle Unter. Im zweiten Stich gewinnst du, weil dein Herz Ass (Trumpf) höher ist als sein Herz Unter.
 
 ## Falsche Eingaben
 
 - Buchstaben oder Kommazahlen (z. B. `abc`, `2.5`): `Ungültige Eingabe. Bitte eine Zahl eingeben.`
-- Zahlen außerhalb des Bereichs (z. B. `0` oder `6`): `Ungültige Zahl. Bitte eine Zahl von 1 bis 5 eingeben.`
+- Zahlen außerhalb des Bereichs (z. B. `0` oder `6`): `Ungültige Zahl. Bitte eine Zahl von 1 bis 5 eingeben.` (die obere Grenze ist die Anzahl deiner Karten)
 
 In beiden Fällen wirst du einfach noch einmal gefragt.
 

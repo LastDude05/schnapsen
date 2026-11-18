@@ -69,3 +69,9 @@ Jeder Eintrag enthält Datum, Werkzeug, den Prompt (wörtlich), das Ergebnis und
 - **Prompt:** „mach was du meinst ist das beste, es sollen die anforderungen sollen erfüllt sein:“ (gleicher Auftrag wie Eintrag 9, Variante a: Spiel läuft bis 66 Punkte oder bis die Hände leer sind, sonst gewinnt der letzte Stich)
 - **Ergebnis:** `Game.java` zählt jetzt `playerPoints` und `computerPoints`. `scoreTrick()` vergibt die Punkte beider Karten an den Stichgewinner, der dann ausspielt. `isOver()` prüft 66 Punkte oder leere Hände, und `playerWinsGame()` bestimmt den Sieger: 66 Punkte, sonst der letzte Stich. `Main.java` spielt in einer Schleife Stich um Stich, zeigt nach jedem Stich den Punktestand und am Ende den Sieger. Spielt der Computer aus, antwortet der Spieler. Getestet mit vier ganzen Spielen, einmal mit falschen Eingaben, und einem temporären Prüfcode für das Spielende bei 66 Punkten für jede Seite und für den Sieg durch den letzten Stich.
 - **Meine Bewertung:**
+
+## 11 · 2026-11-18 · manual.md aktualisiert
+- **Werkzeug:** Claude Code
+- **Prompt:** „ja“ (Antwort auf die Frage, ob `manual.md` an den neuen Spielablauf mit Feature 4 und 5 angepasst werden soll)
+- **Ergebnis:** In `manual.md` beschreibt der Abschnitt „Ablauf“ jetzt das ganze Spiel: wer ausspielt, wer den Stich gewinnt, den Punktestand und das Spielende bei 66 Punkten oder durch den letzten Stich. Das Beispiel stammt aus einem echten Programmlauf. Code wurde nicht geändert. Geprüft habe ich, dass die Ausgaben im Beispiel mit einem Programmlauf übereinstimmen.
+- **Meine Bewertung:**
