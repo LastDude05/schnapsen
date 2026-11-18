@@ -34,6 +34,24 @@ class Game {
         return card;
     }
 
+    // Stichauswertung: Die ausgespielte Karte gewinnt, außer die Antwortkarte
+    // hat dieselbe Farbe und einen höheren Rang, oder sie ist Trumpf und die ausgespielte Karte nicht.
+    boolean responseWins(Card lead, Card response) {
+        String trumpSuit = trumpCard.suit();
+        if (response.suit().equals(lead.suit())) {
+            return rankValue(response) > rankValue(lead);
+        }
+        if (response.suit().equals(trumpSuit)) {
+            return true;
+        }
+        return false;
+    }
+
+    // Die Punkte einer Karte entsprechen ihrer Rangfolge (Ass 11 > Zehn 10 > König 4 > Ober 3 > Unter 2).
+    int rankValue(Card card) {
+        return card.points();
+    }
+
     // Vorerst spielt der Computer immer seine erste Karte.
     Card playComputerCard() {
         Card card = computerHand[0];

@@ -10,7 +10,7 @@ Status: `[x]` fertig, `[ ]` offen
 
 ## Spielablauf
 
-4. [ ] **Stichauswertung:** Wer gewinnt den Stich (Farbe, Trumpf, Rang)?
+4. [x] **Stichauswertung:** Wer gewinnt den Stich (Farbe, Trumpf, Rang)?
 5. [ ] **Punktezählung:** Punkte pro Seite mitzählen, Spielende bei 66.
 6. [ ] **Nachziehen:** Nach jedem Stich vom Talon nachziehen, Stichgewinner zuerst.
 7. [ ] **Ansagen:** 20er und 40er (König und Ober einer Farbe).

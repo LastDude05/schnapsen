@@ -20,6 +20,13 @@ public class Main {
 
         System.out.println("Du spielst: " + playerCard.label());
         System.out.println("Computer spielt: " + computerCard.label());
+
+        int trickPoints = playerCard.points() + computerCard.points();
+        if (game.responseWins(playerCard, computerCard)) {
+            System.out.println("Der Computer gewinnt den Stich (" + trickPoints + " Punkte).");
+        } else {
+            System.out.println("Du gewinnst den Stich (" + trickPoints + " Punkte).");
+        }
         System.out.println();
         printHand(game);
     }
