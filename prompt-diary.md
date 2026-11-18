@@ -75,3 +75,9 @@ Jeder Eintrag enthält Datum, Werkzeug, den Prompt (wörtlich), das Ergebnis und
 - **Prompt:** „ja“ (Antwort auf die Frage, ob `manual.md` an den neuen Spielablauf mit Feature 4 und 5 angepasst werden soll)
 - **Ergebnis:** In `manual.md` beschreibt der Abschnitt „Ablauf“ jetzt das ganze Spiel: wer ausspielt, wer den Stich gewinnt, den Punktestand und das Spielende bei 66 Punkten oder durch den letzten Stich. Das Beispiel stammt aus einem echten Programmlauf. Code wurde nicht geändert. Geprüft habe ich, dass die Ausgaben im Beispiel mit einem Programmlauf übereinstimmen.
 - **Meine Bewertung:**
+
+## 12 · 2026-11-18 · Übersichtlichere Spielausgabe
+- **Werkzeug:** Claude Code
+- **Prompt:** „es ist unübersichtlich:“ (danach die Ausgabe eines ganzen Spiels aus dem Terminal eingefügt)
+- **Ergebnis:** In `Main.java` hat jeder Stich jetzt eine eigene Überschrift („Stich n“) mit der Trumpffarbe. Zwischen Handanzeige und gespielten Karten stehen Leerzeilen, das Stichergebnis ist mit `>>` markiert, und Spielbeginn und Spielende haben eigene Überschriften. An den Spielregeln hat sich nichts geändert. Das Beispiel in `manual.md` wurde an die neue Ausgabe angepasst. Getestet: Der Code kompiliert, und ein ganzes Spiel mit falscher Eingabe lief ohne Probleme durch.
+- **Meine Bewertung:**

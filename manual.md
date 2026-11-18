@@ -35,49 +35,67 @@ Im Moment wird noch nicht vom Talon nachgezogen. Ein Spiel hat deshalb 5 Stiche.
 Die Zahlen hinter `Welche Karte spielst du?` sind deine Eingaben.
 
 ```
-Trumpf: Herz König (4)
+=============== SCHNAPSEN ===============
+Trumpf: Eichel Ass (11)
 Talon: 10 Karten (inklusive Trumpfkarte)
 Computer: 5 Karten (verdeckt)
 
-Deine Hand:
-1. Schelle Unter (2)
-2. Herz Ass (11)
-3. Laub Unter (2)
-4. Schelle Ober (3)
-5. Herz Ober (3)
-Welche Karte spielst du? (1-5): 1
-Du spielst: Schelle Unter (2)
-Computer spielt: Schelle Ass (11)
-Der Computer gewinnt den Stich (13 Punkte).
-Punktestand: Du 0 – Computer 13
+--------------- Stich 1 ---------------
+Trumpf: Eichel
 
-Computer spielt aus: Herz Unter (2)
 Deine Hand:
-1. Herz Ass (11)
-2. Laub Unter (2)
-3. Schelle Ober (3)
-4. Herz Ober (3)
+1. Schelle König (4)
+2. Schelle Ober (3)
+3. Laub Ober (3)
+4. Schelle Ass (11)
+5. Eichel Unter (2)
+Welche Karte spielst du? (1-5): 1
+
+Du spielst: Schelle König (4)
+Computer spielt: Herz Zehn (10)
+>> Du gewinnst den Stich (14 Punkte).
+Punktestand: Du 14 – Computer 0
+
+--------------- Stich 2 ---------------
+Trumpf: Eichel
+
+Deine Hand:
+1. Schelle Ober (3)
+2. Laub Ober (3)
+3. Schelle Ass (11)
+4. Eichel Unter (2)
 Welche Karte spielst du? (1-4): 1
-Du spielst: Herz Ass (11)
-Du gewinnst den Stich (13 Punkte).
-Punktestand: Du 13 – Computer 13
+
+Du spielst: Schelle Ober (3)
+Computer spielt: Eichel Zehn (10)
+>> Der Computer gewinnt den Stich (13 Punkte).
+Punktestand: Du 14 – Computer 13
+
+--------------- Stich 3 ---------------
+Trumpf: Eichel
+
+Computer spielt aus: Laub König (4)
+
+Deine Hand:
+1. Laub Ober (3)
+2. Schelle Ass (11)
+3. Eichel Unter (2)
+Welche Karte spielst du? (1-3): 1
+
+Du spielst: Laub Ober (3)
+>> Der Computer gewinnt den Stich (7 Punkte).
+Punktestand: Du 14 – Computer 20
 
 ...
 
-Deine Hand:
-1. Herz Ober (3)
-Welche Karte spielst du? (1-1): 1
-Du spielst: Herz Ober (3)
-Computer spielt: Eichel Ass (11)
-Du gewinnst den Stich (14 Punkte).
-Punktestand: Du 46 – Computer 13
-
-Spielende!
+=============== SPIELENDE ===============
 Niemand hat 66 Punkte erreicht, deshalb gewinnt, wer den letzten Stich gemacht hat.
-Du gewinnst das Spiel mit 46 Punkten.
+Du gewinnst das Spiel mit 41 Punkten.
 ```
 
-Im ersten Stich gewinnt der Computer, weil sein Schelle Ass höher ist als dein Schelle Unter. Im zweiten Stich gewinnst du, weil dein Herz Ass (Trumpf) höher ist als sein Herz Unter.
+- **Stich 1:** Du gewinnst, weil der Computer eine andere Farbe (Herz) legt und Herz nicht Trumpf ist.
+- **Stich 2:** Der Computer gewinnt, weil seine Eichel Zehn Trumpf ist.
+- **Stich 3:** Der Computer hat Stich 2 gewonnen und spielt deshalb aus. Sein Laub König ist höher als dein Laub Ober.
 
 ## Falsche Eingaben
 

@@ -8,19 +8,25 @@ public class Main {
         Game game = new Game();
         game.deal(new Random());
 
+        System.out.println("=============== SCHNAPSEN ===============");
         System.out.println("Trumpf: " + game.trumpCard.label());
         System.out.println("Talon: " + game.talon.size() + " Karten (inklusive Trumpfkarte)");
         System.out.println("Computer: " + game.computerHandSize + " Karten (verdeckt)");
 
+        int trickNumber = 1;
         while (!game.isOver()) {
+            System.out.println();
+            System.out.println("--------------- Stich " + trickNumber + " ---------------");
+            System.out.println("Trumpf: " + game.trumpCard.suit());
             System.out.println();
             playTrick(scanner, game);
             System.out.println("Punktestand: Du " + game.playerPoints
                     + " – Computer " + game.computerPoints);
+            trickNumber++;
         }
 
         System.out.println();
-        System.out.println("Spielende!");
+        System.out.println("=============== SPIELENDE ===============");
         if (game.playerPoints < Game.WINNING_POINTS && game.computerPoints < Game.WINNING_POINTS) {
             System.out.println("Niemand hat 66 Punkte erreicht, deshalb gewinnt, wer den letzten Stich gemacht hat.");
         }
@@ -42,24 +48,27 @@ public class Main {
             int choice = readCardNumber(scanner, game.playerHandSize);
             playerCard = game.playPlayerCard(choice - 1);
             computerCard = game.playComputerCard();
+            System.out.println();
             System.out.println("Du spielst: " + playerCard.label());
             System.out.println("Computer spielt: " + computerCard.label());
             playerWon = !game.responseWins(playerCard, computerCard);
         } else {
             computerCard = game.playComputerCard();
             System.out.println("Computer spielt aus: " + computerCard.label());
+            System.out.println();
             printHand(game);
             int choice = readCardNumber(scanner, game.playerHandSize);
             playerCard = game.playPlayerCard(choice - 1);
+            System.out.println();
             System.out.println("Du spielst: " + playerCard.label());
             playerWon = game.responseWins(computerCard, playerCard);
         }
 
         int trickPoints = playerCard.points() + computerCard.points();
         if (playerWon) {
-            System.out.println("Du gewinnst den Stich (" + trickPoints + " Punkte).");
+            System.out.println(">> Du gewinnst den Stich (" + trickPoints + " Punkte).");
         } else {
-            System.out.println("Der Computer gewinnt den Stich (" + trickPoints + " Punkte).");
+            System.out.println(">> Der Computer gewinnt den Stich (" + trickPoints + " Punkte).");
         }
         game.scoreTrick(playerWon, playerCard, computerCard);
     }
